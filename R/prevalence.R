@@ -21,8 +21,10 @@
 #'   summarise
 #' @importFrom tidyr last_col
 #' @importFrom dplyr if_any
+#'
 prevalence <- function(data) {
-  data %>%
+
+  result <- data %>%
     dplyr::rename(host = 1) %>%
     dplyr::mutate(parasited = ifelse(dplyr::if_any(2:tidyr::last_col(),
                                                    ~.x != 0),
@@ -35,5 +37,7 @@ prevalence <- function(data) {
     dplyr::distinct() %>%
     dplyr::group_by(host) %>%
     dplyr::summarise(prevalence = n_parasited/n_host)
+
+  return(result)
 }
 

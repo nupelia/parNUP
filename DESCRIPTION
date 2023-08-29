@@ -14,5 +14,6 @@ URL: https://github.com/nupelia/parNUP,
     https://nupelia.github.io/parNUP/
 BugReports: https://github.com/nupelia/parNUP/issues
 Imports: 
+    dplyr (>= 1.0.4),
     magrittr,
     tidyr
