@@ -22,7 +22,7 @@ mean_intensity <- function(data) {
     dplyr::filter(!dplyr::if_all(2:tidyr::last_col(),
                                  ~.x == 0)) %>%
     dplyr::group_by(host) %>%
-    dplyr::add_count(name = "n_host",) %>%
+    dplyr::add_count(name = "n_host") %>%
     dplyr::relocate(n_host, .after = host) %>%
     tidyr::pivot_longer(cols = 3:tidyr::last_col()) %>%
     dplyr::filter(value > 0) %>%
@@ -31,7 +31,8 @@ mean_intensity <- function(data) {
       mean = mean(value),
       sd = sd(value),
       se = sd(value)/sqrt(length(host))
-    )
+    ) %>%
+    ungroup()
 
   return(result)
 

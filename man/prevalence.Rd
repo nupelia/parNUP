@@ -7,23 +7,14 @@
 prevalence(data)
 }
 \arguments{
-\item{data}{A data frame with individual hosts as the first column and
-parasite counts as the remaining columns}
+\item{data}{A data frame with individual hosts as the first column and parasite counts as the remaining columns}
 }
 \value{
-A data frame with the host as the first column and prevalence as
-the second
+A data frame with the prevalence of each species
 }
 \description{
 Calculate the prevalence of parasitism
 }
 \examples{
-data <- data.frame(host = c("A", "A", "B", "B"),
-                   parasite1 = c(1, 0, 0, 1),
-                   parasite2 = c(0, 1, 0, 0))
-prevalence(data)
-#>   host n_parasited n_host prevalence
-#> 1    A            2      2        1.0
-#> 2    B            1      2        0.5
-
+prevalence(dataset)
 }

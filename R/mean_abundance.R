@@ -31,7 +31,8 @@ mean_abundance <- function(data) {
       mean = mean(value),
       sd = sd(value),
       se = sd(value)/sqrt(length(host))
-    )
+    ) %>%
+    ungroup()
 
   return(result)
 
