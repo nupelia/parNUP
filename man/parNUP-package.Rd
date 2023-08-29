@@ -12,6 +12,7 @@ What the package does (one paragraph).
 Useful links:
 \itemize{
   \item \url{https://github.com/nupelia/parNUP}
+  \item \url{https://nupelia.github.io/parNUP/}
   \item Report bugs at \url{https://github.com/nupelia/parNUP/issues}
 }
 
