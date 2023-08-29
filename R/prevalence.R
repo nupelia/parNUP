@@ -17,11 +17,6 @@
 #' #> 1    A            2      2        1.0
 #' #> 2    B            1      2        0.5
 #'
-#' @importFrom dplyr rename mutate group_by add_count select distinct
-#'   summarise
-#' @importFrom tidyr last_col
-#' @importFrom dplyr if_any
-#'
 prevalence <- function(data) {
 
   result <- data %>%
